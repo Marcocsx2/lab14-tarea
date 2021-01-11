@@ -1,0 +1,73 @@
+<h1>Filtros de Angular:</h1>
+<div>
+  <h2>Currency Pipe</h2>
+  <p> Precio en Dolares: {{dinero | currency}}</p>
+  <p> Precio en Nuevos Soles: {{dinero | currency:'S/.'}}</p>
+</div>
+
+<div>
+  <h2>Currency JSON</h2>
+  <p>Sin JSON pipe:</p>
+  <p>{{object}}</p>
+  <p>Con JSON pipe:</p>
+  <pre>{{object | json}}</pre>
+</div>
+
+<div>
+  <h2>Number Pipe</h2>
+  <p> Con 4 decimales: {{decimal | number:'2.1-4'}}</p>
+  <p> Con 7 enteroes y 2 decimales: {{decimal | number:'8.1-2'}}</p>
+</div>
+
+<div>
+  <h2>Number Pipe</h2>
+  <p> porcentaje: {{percent | percent}}</p>
+  <p> porcentaje con 2 decimales: {{percent | percent:'3.1-2'}}</p>
+</div>
+
+<div>
+  <h2>UpperCase and LowerCase Pipe</h2>
+  <p> Uppercase: {{texto | uppercase}}</p>
+  <p> LowerCase: {{texto | lowercase}}</p>
+</div>
+
+<div>
+  <h2>Slice Pipe</h2>
+  <p>Los 3 primeros</p>
+  <ul>
+    <li *ngFor="let i of collection | slice:0:3">{{i}}</li>
+  </ul>
+  <p>Los 3 ultimos</p>
+  <ul>
+    <li *ngFor="let i of collection | slice:-3">{{i}}</li>
+  </ul>
+</div>
+
+<div>
+  <h2>Date Pipe</h2>
+  <p>Hoy es: {{today | date}}</p>
+  <p>Segunda opcion: {{today | date:'fullDate'}}</p>
+  <p>Sacar la Hora: {{today | date:'h:mm a z'}}</p>
+</div>
+
+<div>
+  <h2>TitleCase Pipe</h2>
+  <p>{{'some string' | titlecase}}</p>
+  <p>{{'tHIs is mIXeD CaSe' | titlecase}}</p>
+  <p>{{'its non-trivial question' | titlecase}}</p>
+  <p>{{'one,two,three' | titlecase}}</p>
+  <p>{{'true|false' | titlecase}}</p>
+  <p>{{'foo-vs-bar' | titlecase}}</p>
+</div>
+
+<span>
+  <h2>KeyValue Pipe</h2>
+  <p>Object</p>
+  <div *ngFor="let item of key | keyvalue">
+    {{item.key}}:{{item.value}}
+  </div>
+  <p>Map</p>
+  <div *ngFor="let item of map | keyvalue">
+    {{item.key}}:{{item.value}}
+  </div>
+</span>
